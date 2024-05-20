@@ -1,4 +1,5 @@
-package slogmultikeycontexthandler
+// correlation_context_handler.go
+package correlationcontexthandler
 
 import (
 	"context"
