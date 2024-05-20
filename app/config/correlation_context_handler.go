@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/hugovallada/slog-multikey-context-handler/internal/keys"
+	"github.com/hugovallada/slog-multikey-context-handler/app/keys"
 )
 
 type CorrelationContextHandler struct {
