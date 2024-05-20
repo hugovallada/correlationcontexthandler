@@ -1,3 +1,3 @@
-module github.com/hugovallada/slog-multikey-context-handler
+module github.com/hugovallada/slogmultikeycontexthandler
 
 go 1.21.1
