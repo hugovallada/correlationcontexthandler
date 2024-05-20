@@ -12,7 +12,7 @@ type MultiKeyContextHandler struct {
 	keys []any
 }
 
-func New(keys []any, handler slog.Handler) MultiKeyContextHandler {
+func NewMultiKeyContextHandler(keys []any, handler slog.Handler) MultiKeyContextHandler {
 	return MultiKeyContextHandler{
 		handler, keys,
 	}
