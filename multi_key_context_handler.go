@@ -1,4 +1,4 @@
-package config
+package slogmultikeycontexthandler
 
 import (
 	"context"

@@ -1,5 +1,4 @@
-// keys.go
-package keys
+package slogmultikeycontexthandler
 
 type CorrelationId string
 type TraceId string
