@@ -30,14 +30,14 @@ func getContextValues(ctx context.Context) map[string]string {
 	ctxAsString := fmt.Sprintf("%s", ctx)
 	stringAsList := strings.Split(ctxAsString, ".WithValue")
 	listAsString := fmt.Sprintf("%s", strings.Split(strings.Join(stringAsList, ","), ",")[1:])
-	stringAsList = strings.Split(listAsString, "(")
+	stringAsList = strings.Split(listAsString, ")")
 	listAsString = strings.Trim(strings.Trim(strings.Join(stringAsList, ","), "["), "]")
 	stringAsList = strings.Split(strings.Trim(listAsString, " "), ",")
 	values := make(map[string]string)
 	for _, item := range stringAsList {
 		keyValuePair := strings.Split(fmt.Sprintf("%v", strings.Split(item, ".")[1:]), "val")
 		if len(keyValuePair) == 2 {
-			values[keyValuePair[0]] = keyValuePair[1]
+			values[strings.TrimSpace(strings.Trim(keyValuePair[0], "["))] = strings.TrimSpace(strings.Trim(keyValuePair[1], "]"))
 		}
 	}
 	return values
