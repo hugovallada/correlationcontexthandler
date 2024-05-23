@@ -11,6 +11,12 @@ type AllContextValuesHandler struct {
 	slog.Handler
 }
 
+func NewAllContextValueHandler(slog slog.Handler) AllContextValuesHandler {
+	return AllContextValuesHandler{
+		slog,
+	}
+}
+
 func (h AllContextValuesHandler) Handle(ctx context.Context, record slog.Record) error {
 	contextValues := getContextValues(ctx)
 	for key, value := range contextValues {
